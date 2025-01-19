@@ -15,7 +15,9 @@ const params = {
   fuelBurnRate: 0.5 // Fuel burn rate (kg/s)
 };
 
-
+// functions for unit conversion
+const mpsToKmh = (mps) => mps * 3.6;
+const kmhToMps = (kmh) => kmh / 3.6;
 
 
 const d2 = d + (vel*time) //calcultes new distance
