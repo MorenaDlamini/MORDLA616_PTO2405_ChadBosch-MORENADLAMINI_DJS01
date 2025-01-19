@@ -26,6 +26,12 @@ function calcNewVelocity({ velocity, acceleration, time }) {
   return mpsToKmh(newVelocityMps); // Convert back to km/h
 }
 
+// function to calculate new distance
+function calcNewDistance({ distance, velocity, time }) {
+  const velocityMps = kmhToMps(velocity); // Convert km/h to m/s
+  const distanceMeters = velocityMps * time; // Calculate distance in meters
+  return distance + distanceMeters / 1000; // Convert meters to kilometers and add initial distance
+}
 
 const d2 = d + (vel*time) //calcultes new distance
 const rf = fbr*time //calculates remaining fuel
