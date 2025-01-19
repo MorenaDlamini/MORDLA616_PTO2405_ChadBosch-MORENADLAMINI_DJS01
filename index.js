@@ -48,9 +48,9 @@ try {
   const newDistance = calcNewDistance(params);
   const remainingFuel = calcRemainingFuel(params);
 
-  console.log(`Corrected New Velocity: ${newVelocity.toFixed(2)} km/h`);
-  console.log(`Corrected New Distance: ${newDistance.toFixed(2)} km`);
-  console.log(`Corrected Remaining Fuel: ${remainingFuel.toFixed(2)} kg`);
+  console.log(`New Velocity: ${newVelocity.toFixed(2)} km/h`);
+  console.log(`New Distance: ${newDistance.toFixed(2)} km`);
+  console.log(`Remaining Fuel: ${remainingFuel.toFixed(2)} kg`);
 } catch (error) {
   console.error(`Error: ${error.message}`);
 }
