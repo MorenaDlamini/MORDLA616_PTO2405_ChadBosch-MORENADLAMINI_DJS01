@@ -6,12 +6,16 @@
  */
 
 // Given Parameters
-const vel = 10000; // velocity (km/h)
-const acc = 3; // acceleration (m/s^2)
-const time = 3600; // seconds (1 hour)
-const d = 0; // distance (km)
-const fuel = 5000; // remaining fuel (kg)
-const fbr = 0.5; // fuel burn rate (kg/s)
+const params = {
+  velocity: 10000, // Initial velocity (km/h)
+  acceleration: 3, // Acceleration (m/s^2)
+  time: 3600, // Time duration (seconds)
+  distance: 0, // Initial distance (km)
+  fuel: 5000, // Initial fuel (kg)
+  fuelBurnRate: 0.5 // Fuel burn rate (kg/s)
+};
+
+
 
 
 const d2 = d + (vel*time) //calcultes new distance
