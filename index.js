@@ -1,8 +1,8 @@
 /**
  * Debugging Guide
- * 1. Make the code more readable
- * 2. Pick up calculation errors
- * 3. Make these calculations robust such that the calculation does not give an incorrect result, it throws an error to the user if something has gone wrong (parameter used with an incorrect unit of measurement, etc)
+ * 1. Make the code more readable.
+ * 2. Correct calculation errors.
+ * 3. Ensure calculations are robust and handle unit mismatches effectively.
  */
 
 // Given Parameters
@@ -42,21 +42,15 @@ function calcRemainingFuel({ fuel, fuelBurnRate, time }) {
   return fuel - fuelUsed; // Calculate remaining fuel
 }
 
-const d2 = d + (vel*time) //calcultes new distance
-const rf = fbr*time //calculates remaining fuel
-const vel2 = calcNewVel(acc, vel, time) //calculates new velocity based on acceleration
+// Main computation with error handling
+try {
+  const newVelocity = calcNewVelocity(params);
+  const newDistance = calcNewDistance(params);
+  const remainingFuel = calcRemainingFuel(params);
 
-// Pick up an error with how the function below is called and make it robust to such errors
-calcNewVel = (vel, acc, time) => { 
-  return vel + (acc*time)
+  console.log(`Corrected New Velocity: ${newVelocity.toFixed(2)} km/h`);
+  console.log(`Corrected New Distance: ${newDistance.toFixed(2)} km`);
+  console.log(`Corrected Remaining Fuel: ${remainingFuel.toFixed(2)} kg`);
+} catch (error) {
+  console.error(`Error: ${error.message}`);
 }
-
-console.log(`Corrected New Velocity: ${vel2} km/h`);
-console.log(`Corrected New Distance: ${d2} km`);
-console.log(`Corrected Remaining Fuel: ${rf} kg`);
-
-
-
-
-
-
