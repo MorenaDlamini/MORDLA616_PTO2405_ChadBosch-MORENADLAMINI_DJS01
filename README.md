@@ -44,3 +44,10 @@ This challenge invites students to debug, refactor, and enhance JavaScript funct
 1. Enhance code readability for easier debugging.
 2. Identify and correct calculation errors.
 3. Improve the robustness of calculations. If incorrect units are used or other errors are detected, the code should notify the user instead of producing an incorrect result.
+
+#### Changes Made
+
+1. Introduced modular functions for velocity, distance, and fuel calculations.
+2. Added utility functions for unit conversions.
+3. Implemented error handling for invalid inputs.
+4. Improved code readability and maintainability through meaningful naming and consistent structure
