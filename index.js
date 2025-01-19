@@ -19,6 +19,13 @@ const params = {
 const mpsToKmh = (mps) => mps * 3.6;
 const kmhToMps = (kmh) => kmh / 3.6;
 
+// function to calculate new velocity
+function calcNewVelocity({ velocity, acceleration, time }) {
+  const velocityMps = kmhToMps(velocity); // Convert km/h to m/s
+  const newVelocityMps = velocityMps + acceleration * time; // Calculate new velocity in m/s
+  return mpsToKmh(newVelocityMps); // Convert back to km/h
+}
+
 
 const d2 = d + (vel*time) //calcultes new distance
 const rf = fbr*time //calculates remaining fuel
