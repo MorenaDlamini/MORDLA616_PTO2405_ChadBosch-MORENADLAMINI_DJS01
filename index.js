@@ -33,6 +33,15 @@ function calcNewDistance({ distance, velocity, time }) {
   return distance + distanceMeters / 1000; // Convert meters to kilometers and add initial distance
 }
 
+// function to calculate remaining fuel
+function calcRemainingFuel({ fuel, fuelBurnRate, time }) {
+  const fuelUsed = fuelBurnRate * time; // Fuel used in kg
+  if (fuelUsed > fuel) {
+    throw new Error("The Fuel is Insufficient for the given burn rate and time.");
+  }
+  return fuel - fuelUsed; // Calculate remaining fuel
+}
+
 const d2 = d + (vel*time) //calcultes new distance
 const rf = fbr*time //calculates remaining fuel
 const vel2 = calcNewVel(acc, vel, time) //calculates new velocity based on acceleration
